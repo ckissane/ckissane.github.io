@@ -715,6 +715,12 @@ a.icons-menu-button:focus,
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
+    background: rgba(255,255,255,0.5); 
+    -webkit-box-shadow: inset 0 0 6px rgba(30, 30, 74,0.8); 
+}
+::-webkit-scrollbar-thumb:hover {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
     background: white; 
     -webkit-box-shadow: inset 0 0 6px rgba(30, 30, 74,0.8); 
 }
@@ -723,4 +729,99 @@ a.icons-menu-button:focus,
 }
 body,html{
     height:100%;
+}
+/*#owl-demo .item,#owl-demo .owl-wrapper-outer{
+    display: block;
+    width: 100%;
+    height: calc( 100% );
+}
+#owl-demo{
+    height: calc( 100% - 300px );
+}*/
+.project-table td,#owl-demo .item{
+    background:white;
+}
+.project-table td h3,#owl-demo .item h3{
+    font-size:20px;
+    margin:0px;
+}
+#owl-demo .item{
+    border-radius:20px;
+    font-size:20px;
+    margin:10px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.owl-buttons{
+    display:none;
+}
+@media screen and (max-width: 500px) {
+    /* Let's get this party started */
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.5); 
+    -webkit-box-shadow: inset 0 0 4px rgba(30, 30, 74,0.8); 
+}
+::-webkit-scrollbar-thumb:hover {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background: white; 
+    -webkit-box-shadow: inset 0 0 4px rgba(30, 30, 74,0.8); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(30, 30, 74,0.8); 
+}
+    #wraper {
+    
+    margin-top: 10px;
+    height:calc( 100% - 20px );
+    width:calc( 100% - 40px );
+    margin-bottom: 10px;
+    
+   
+    }
+    .home-header .title{
+    font-size:50px;
+}
+.foto{
+    width:100%;
+}
+.foto img,.foto svg{
+    width:100%;
+    max-width:100%;
+}
+
+}
+@media screen and (max-width: 400px) {
+    #wraper {
+    
+    margin-top: 10px;
+    height:calc( 100% - 20px );
+    width:calc( 100% - 40px );
+    margin-bottom: 10px;
+    
+   
+    }
+    .home-header .title{
+    font-size:30px;
+}
+.home-header .sub-title{
+    font-size:10px;
+}
+
+
 }
