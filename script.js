@@ -37,7 +37,7 @@ function render() {
     gl.uniform1f(program.time, time / 1000);
 
     program.resolution = gl.getUniformLocation(program, "resolution");
-    gl.uniform2f(program.resolution, window.innerWidth, window.innerHeight);
+    gl.uniform2f(program.resolution, canvas.width, canvas.height);
 
     program.cola = gl.getUniformLocation(program, "cola");
     var rgb = hexToRgb("#2196f3");//col.value);
