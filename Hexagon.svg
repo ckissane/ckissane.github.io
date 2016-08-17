@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   viewBox="0 0 100 100"
+   id="svg6779"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Hexagon.svg">
+  <defs
+     id="defs6781" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="37.705707"
+     inkscape:cy="64.464986"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="axonomgrid"
+       id="grid7329"
+       units="px"
+       empspacing="5"
+       originx="50"
+       originy="50"
+       spacingy="1" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata6784">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-952.36216)">
+    <path
+       style="fill:#fefefe;fill-opacity:0.5;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 100,1002.3622 -25,-43.30082 -50,0 L -9.9999994e-8,1002.3622 25,1045.6629 l 50,0 25,-43.3007 z m -2,0 -24,41.5683 -48,0 L 1.9999999,1002.3622 26,960.7938 l 48,0 24,41.5684 z"
+       id="path7331"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#fefefe;fill-opacity:0.5;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 72.50002,963.39104 -45.00004,0 -22.5,38.97116 22.5,38.9711 45.00004,0 22.5,-38.9711 z"
+       id="path7339"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
