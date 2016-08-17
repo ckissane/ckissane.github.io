@@ -22,6 +22,9 @@ body,html{
     margin:0;
     overflow: hidden;;
 }
+#container{
+    overflow: hidden;
+}
 #nav{
 
     height:2.0em;
