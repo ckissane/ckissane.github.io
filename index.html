@@ -120,7 +120,7 @@ vec3 hsv(vec3 c) {
                 //p=p*resolution.y;
                 vec2 inVecPos=(10.0 + 0.0 * sin(0.2 * time)) * p;
                 float mousePower=max((1.0-pow(length(( gl_FragCoord.xy / resolution.y )-mouse*resolution.xy/resolution.y)*4.0,1.0)),0.0);
-                gl_FragColor = vec4(hsv(vec3(rand(vec2(rand(floor(p*10.0)),0.0))+time/10.0,1.0,0.25+mousePower/15.0*0.0)),1.0);//vec4(hsv(vec3(mod(p.x+time/2.0,1.0),1.0,1.0))/((pow(p.y-sin(p.x*resolution.x/5.0)/5.0,2.0)*500.0)+1.0), 1.0);
+                gl_FragColor = vec4(hsv(vec3(rand(vec2(rand(floor(p*10.0)*1.0),floor(p*10.0)*1.0))+time/10.0,1.0,0.25)),1.0);//vec4(hsv(vec3(mod(p.x+time/2.0,1.0),1.0,1.0))/((pow(p.y-sin(p.x*resolution.x/5.0)/5.0,2.0)*500.0)+1.0), 1.0);
 
             }
 
