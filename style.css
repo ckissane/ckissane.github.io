@@ -189,7 +189,7 @@ clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
 }
 .center-scrollable #github-projects table{
     color:white;
-    outline:1px solid white;
+    /*outline:1px solid white;*/
     width:100%;
     font-size: 0.5em;
     font-family: 'Glober';
