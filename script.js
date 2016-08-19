@@ -53,7 +53,7 @@ function render() {
     gl.drawArrays(gl.TRIANGLES, 0, triangleVertices.length / 2);
     requestAnimationFrame(render);
 
-    time=Date.now()%10000;//-start;
+    time=Date.now()%20000;//-start;
 
 }
 function hexToRgb(hex) {

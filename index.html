@@ -6,6 +6,7 @@
         <link rel="icon" type="image/png" href="favicon.png">
         <link rel="stylesheet" href="style.css" type="text/css">
         <script src="jquery-3.1.0.min.js"></script>
+        <script src="bundle.js"></script>
 
 
     </head>
@@ -114,7 +115,20 @@ vec3 hsv(vec3 c) {
   return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
 }
 
-
+void main() {
+                vec2 p = (gl_FragCoord.xy) / min(resolution.x,resolution.y)-vec2(0.5);
+                //p=p*resolution.y;
+                vec2 inVecPos=(10.0 + 0.0 * sin(0.2 * time)) * p;
+                float mousePower=max((1.0-pow(length(( gl_FragCoord.xy / resolution.y )-mouse*resolution.xy/resolution.y)*4.0,1.0)),0.0);
+		    float hue=rand(vec2(rand(floor(p*10.0)*1.0),floor(p.y*10.0)*1.0))+time/20.0;
+		    vec3 pC=hsv(vec3(hue,1.0,0.5));
+		    float typBright=(0.299*pC.x + 0.587*pC.y + 0.114*pC.z);
+                gl_FragColor = vec4((hsv(vec3(hue,1.0,0.5))*(1.0-typBright)+vec3(0.5)*(typBright)),1.0);//vec4(hsv(vec3(mod(p.x+time/2.0,1.0),1.0,1.0))/((pow(p.y-sin(p.x*resolution.x/5.0)/5.0,2.0)*500.0)+1.0), 1.0);
+if(mod(p.x*10.0,1.0)>mouse.x){
+                //gl_FragColor = vec4((hsv(vec3(hue,0.5,1.0))+hsv(vec3(hue,1.0,0.5)))/4.0,1.0);//vec4(hsv(vec3(mod(p.x+time/2.0,1.0),1.0,1.0))/((pow(p.y-sin(p.x*resolution.x/5.0)/5.0,2.0)*500.0)+1.0), 1.0);
+}
+            }
+            /*
             void main() {
                 vec2 p = (gl_FragCoord.xy) / min(resolution.x,resolution.y)-vec2(0.5);
                 //p=p*resolution.y;
@@ -123,6 +137,7 @@ vec3 hsv(vec3 c) {
                 gl_FragColor = vec4(hsv(vec3(rand(vec2(rand(floor(p*10.0)*1.0),floor(p*10.0)*1.0))+time/10.0,1.0,0.25)),1.0);//vec4(hsv(vec3(mod(p.x+time/2.0,1.0),1.0,1.0))/((pow(p.y-sin(p.x*resolution.x/5.0)/5.0,2.0)*500.0)+1.0), 1.0);
 
             }
+            */
 
 
         </script>
@@ -133,6 +148,7 @@ vec3 hsv(vec3 c) {
                 gl_Position = vec4(vertPosition, 0.0, 1.0);
             }
         </script>
+        <script src="colors.js"></script>
         <style>
         #github-projects{
             height: calc( 100% - 15vmin );
