@@ -11,24 +11,28 @@ var mouse = {
 var canvas = document.getElementById("shader");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-var gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
 var ctx = canvas.getContext("2d");
-var vertexShader = gl.createShader(gl.VERTEX_SHADER);
-var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
-gl.shaderSource(vertexShader, document.getElementById("vertex").innerHTML);
-gl.shaderSource(fragmentShader, document.getElementById("fragment").innerHTML);
-gl.compileShader(vertexShader);
-gl.compileShader(fragmentShader);
-var program = gl.createProgram();
-gl.attachShader(program, vertexShader);
-gl.attachShader(program, fragmentShader);
-gl.linkProgram(program);
-var triangleVertices = [-1.0, -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0];
+
 
 var time = 0;
 var start=Date.now();
 function render() {
-    gl.clearColor(0, 0, 0, 0);
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    var tileSize=Math.min(canvas.width, canvas.height)/10;
+    for(var x=0;x<canvas.width;x+=tileSize){
+        for(var y=0;y<canvas.height;y+=tileSize){
+            ctx.beginPath();
+            var origColor=tinycolor({h:((new Math.seedrandom(x+","+y))()*360+time/10000*360)%360,s:1,v:0.5}).toRgb();
+            var typBright=(0.299*origColor.r + 0.587*origColor.g + 0.114*origColor.b)/255;
+
+            ctx.fillStyle=tinycolor({r:origColor.r*(1-typBright)+typBright*128,g:origColor.g*(1-typBright)+typBright*128,b:origColor.b*(1-typBright)+typBright*128}).toRgbString();
+            ctx.strokeStyle=ctx.fillStyle;
+            ctx.fillRect(Math.floor(x),Math.floor(y),tileSize+1,tileSize+1);
+            ctx.stroke();
+            ctx.fill();
+        }
+    }
+    /*gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(triangleVertices), gl.STATIC_DRAW);
@@ -51,10 +55,10 @@ function render() {
     gl.enableVertexAttribArray(program.position);
     gl.vertexAttribPointer(program.position, 2, gl.FLOAT, gl.FALSE, 0, 0);
 
-    gl.drawArrays(gl.TRIANGLES, 0, triangleVertices.length / 2);
+    gl.drawArrays(gl.TRIANGLES, 0, triangleVertices.length / 2);*/
     requestAnimationFrame(render);
 
-    time=Date.now()%20000;//-start;
+    time=Date.now()%10000;//-start;
 
 }
 function hexToRgb(hex) {
