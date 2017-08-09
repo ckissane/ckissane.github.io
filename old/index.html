@@ -1,0 +1,217 @@
+<html>
+    <head>
+
+        <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+        <script src="https://use.fontawesome.com/451e2af5b7.js"></script>
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="jquery-3.1.0.min.js"></script>
+        <script src="bundle.js"></script>
+
+
+    </head>
+    <body page="home">
+
+        <canvas id="shader"></canvas>
+        <div id="container">
+            <div class="pages">
+
+                <div class="page projects-page">
+                    <div class="center-scrollable">
+                        <h1>Projects</h1>
+                        <!--h2>More recent ones and many others can be found at <a href="http://cm-tech.github.io/">cm-tech.github.io</a></h2-->
+                        <h2>Some of the Cool Projects I've Worked On</h2>
+                        <div id="github-projects" class="scrollbar">
+                            <table>
+                                <tr><td><a href="https://github.com/CM-Tech/tank-time">tank-time</a></td></tr>
+                                <tr><td><a href="https://github.com/coler706/Super-Cellular-Automata">Super-Cellular-Automata</a></td></tr>
+                                <tr><td><a href="https://github.com/CM-Tech/Pen-Flame">Pen-Flame</a></td></tr>
+                                <tr><td><a href="https://github.com/CM-Tech/Traffic-Dots">Traffic-Dots</a></td></tr>
+                                <tr><td><a href="https://github.com/CM-Tech/Cobwebify">Cobwebify</a></td></tr>
+                                <tr><td><a href="https://github.com/CM-Tech/Water-Renderer/">Water-Renderer</a></td></tr>
+                                <tr><td><a href="http://cm-tech.github.io/Hexagario">Hexagario</a></td></tr>
+                                <tr><td><a href="https://github.com/CM-Tech/Light-Beamer">Light-Beamer</a></td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="page skills-page">
+                    <div class="center-scrollable">
+                        <h1>Skills</h1>
+                        <!--h2>More recent ones and many others can be found at <a href="http://cm-tech.github.io/">cm-tech.github.io</a></h2-->
+                        <h2>Some Info About My Skillset</h2>
+                        <div id="about-description" class="scrollbar">
+                            I'm a great problem solver and I have good math abilities. I also do graphic design! Additionally I'm versatile, and if needed it doesn't take me to long to learn the syntax of a new language. Some of the languages I can work in include HTML, JS, CSS, Python, Java, and Swift.
+                        </div>
+                    </div>
+                </div>
+                <div class="page home-page">
+                    <div class="center-hexagon"><img src="SVGLogo.svg" class="logo"><h1>Cole Kissane</h1> <h2>Versatile Developer &<br> Graphic Designer</h2> </div>
+                </div>
+                <div class="page about-page">
+                    <div class="center-scrollable">
+                        <h1>About</h1>
+                        <h2>Get to Know Me</h2>
+                        <div id="about-description" class="scrollbar">
+                            Cole Kissane is a developer who likes creating programs that are both fun and mathematical, he especially likes fractals and simulations.
+        He works on many of his projects with his friends, most often with modderme123. These projects can be found at <a href="http://cm-tech.github.io/">cm-tech.github.io</a>. Cole Kissane also does graphic design and makes many logos. He uses coler706 as his username on most sites.
+                        </div>
+                    </div>
+                </div>
+                <div class="page contact-page">
+                    <div class="center-scrollable">
+                        <h1>Contact</h1>
+                        <div id="contact-info" class="scrollbar">
+                            <table class="contact-table">
+                                <tr><td><i class="fa fa-mobile" aria-hidden="true"></i><span class="contact">650-409-7884</span></td></tr>
+                                <tr><td><i class="fa fa-envelope" aria-hidden="true"></i><span class="contact">coler706@gmail.com</span></td></tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="nav">
+            <div id="nav-item-container">
+            <a onclick="setPage('projects')" id="nav-item">Projects</a>
+            <a onclick="setPage('skills')" id="nav-item">Skills</a>
+            <a onclick="setPage('home')" id="nav-item"><i class="fa fa-home"></i><!--[if lt IE 11]>
+    home
+<![endif]--></a>
+            <a onclick="setPage('about')" id="nav-item">About</a>
+            <a onclick="setPage('contact')" id="nav-item">Contact</a>
+            <span id="nav-item" class="nav-selection"></span>
+            </div>
+
+        </div>
+
+        <script id="fragment" type="x-shader/x-fragment">
+
+            #ifdef GL_ES
+            precision mediump float;
+            #endif
+
+            #extension GL_OES_standard_derivatives: enable
+
+            uniform float time;
+            uniform vec2 mouse;
+            uniform vec2 resolution;
+            uniform vec4 cola;
+
+            vec2 hash(vec2 p) {
+                p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
+                return fract(sin(p) * 18.5453);
+            }
+
+
+            float rand(vec2 co){
+    return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+}
+vec3 hsv(vec3 c) {
+  vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+  vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+  return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+void main() {
+                vec2 p = (gl_FragCoord.xy) / min(resolution.x,resolution.y)-vec2(0.5);
+                //p=p*resolution.y;
+                vec2 inVecPos=(10.0 + 0.0 * sin(0.2 * time)) * p;
+                float mousePower=max((1.0-pow(length(( gl_FragCoord.xy / resolution.y )-mouse*resolution.xy/resolution.y)*4.0,1.0)),0.0);
+		    float hue=rand(vec2(rand(floor(p*10.0)*1.0),floor(p.y*10.0)*1.0))+time/20.0;
+		    vec3 pC=hsv(vec3(hue,1.0,0.5));
+		    float typBright=(0.299*pC.x + 0.587*pC.y + 0.114*pC.z);
+                gl_FragColor = vec4((hsv(vec3(hue,1.0,0.5))*(1.0-typBright)+vec3(0.5)*(typBright)),1.0);//vec4(hsv(vec3(mod(p.x+time/2.0,1.0),1.0,1.0))/((pow(p.y-sin(p.x*resolution.x/5.0)/5.0,2.0)*500.0)+1.0), 1.0);
+if(mod(p.x*10.0,1.0)>mouse.x){
+                //gl_FragColor = vec4((hsv(vec3(hue,0.5,1.0))+hsv(vec3(hue,1.0,0.5)))/4.0,1.0);//vec4(hsv(vec3(mod(p.x+time/2.0,1.0),1.0,1.0))/((pow(p.y-sin(p.x*resolution.x/5.0)/5.0,2.0)*500.0)+1.0), 1.0);
+}
+            }
+            /*
+            void main() {
+                vec2 p = (gl_FragCoord.xy) / min(resolution.x,resolution.y)-vec2(0.5);
+                //p=p*resolution.y;
+                vec2 inVecPos=(10.0 + 0.0 * sin(0.2 * time)) * p;
+                float mousePower=max((1.0-pow(length(( gl_FragCoord.xy / resolution.y )-mouse*resolution.xy/resolution.y)*4.0,1.0)),0.0);
+                gl_FragColor = vec4(hsv(vec3(rand(vec2(rand(floor(p*10.0)*1.0),floor(p*10.0)*1.0))+time/10.0,1.0,0.25)),1.0);//vec4(hsv(vec3(mod(p.x+time/2.0,1.0),1.0,1.0))/((pow(p.y-sin(p.x*resolution.x/5.0)/5.0,2.0)*500.0)+1.0), 1.0);
+
+            }
+            */
+
+
+        </script>
+        <script id="vertex" type="x-shader/x-vertex">
+            precision mediump float;
+            attribute vec2 vertPosition;
+            void main() {
+                gl_Position = vec4(vertPosition, 0.0, 1.0);
+            }
+        </script>
+        <script src="colors.js"></script>
+        <style>
+        #github-projects{
+            height: calc( 100% - 15vmin );
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            /*outline:1px solid white;*/
+        }
+        #github-projects table{
+            min-height: 100%;
+            width: 100%;
+            outline:none;
+        }
+
+        </style>
+        <style>
+        #contact-info{
+            height: calc( 100% - 5vmin );
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+
+
+            font-family: 'Glober';
+            font-weight: lighter;
+            color:white;
+        }
+        .contact-table{
+            height: auto;
+            width: 100%;
+            margin-left: 0%;
+            margin:0;
+            font-size: 7vmin;
+            font-family: 'Glober';
+            font-weight: lighter;
+            color:white;
+            text-align: center;
+        }
+        .contact-table .contact{
+            font-size: 7vmin;
+            vertical-align: middle;
+            margin-left: 0.5em;
+
+        }
+
+        </style>
+        <style>
+        #about-description{
+            height: calc( 100% - 5vmin );
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+
+            font-size: 1.0em;
+            font-family: 'Glober';
+            font-weight: lighter;
+            color:white;
+        }
+
+        </style>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.0/seedrandom.min.js">
+</script>
+    <script src="tinycolor.js"></script>
+    <script src="scriptcanvas.js"></script>
+</html>
