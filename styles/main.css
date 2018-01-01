@@ -212,6 +212,9 @@ overflow-y: auto;
   transition: transform 1s;
   position: absolute;
 }
+.page[page="home"]{
+height:50vh;
+}
 #first-section[page="home"] .page[page="home"]{
   display: block;
   transform: translate(0,0);
