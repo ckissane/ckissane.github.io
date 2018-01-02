@@ -30,7 +30,7 @@ function drawWord(){
   //wCtx.strokeText(word,x,y);
   //wCtx.strokeText(word,x,y);
   wCtx.fillText(word,wX,wY);
-  var inc=0.05;
+  var inc=0.2;
   wordStep+=inc;
   if(wordStep>=1){
     wordStep=wordStep%1;
