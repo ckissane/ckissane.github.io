@@ -259,7 +259,7 @@ height:50vh;
   transition: height 1s;
 }
 #first-section[page="about"]{
-  height: 100vh;
+  height: 50vh;
   transition: height 1s;
 }
 #first-section[page="contact"]{
@@ -270,11 +270,11 @@ height:50vh;
   position: relative;
   overflow: hidden;
 }
-#project-section[page="about"]{
+/*#project-section[page="about"]{
   height: 0vh;
   transition: height 1s;
 
-}
+}*/
 
 
 .project .project-hover{
