@@ -1,6 +1,6 @@
 
 html,body{
-  font-family: Roboto;
+  font-family: 'Righteous', sans-serif;
   padding: 0px;
   margin:0px;
   width: 100%;
@@ -16,9 +16,13 @@ margin:0px;
 #first-section{
   height: 50vh;
   width: 100%;
-  background: white;
+  background: #2cbae7;
   position: relative;
   overflow: hidden;
+}
+#project-section{
+
+  background: #2cbae7;
 }
 
 #particles-js{
@@ -39,22 +43,23 @@ user-select: none;
   top:50%;
   transform: translate(-50%,calc( -50% - 20px ));
   text-align: center;
-  color:black;
+  color:white;
   width: 100%;
-  font-family: "Righteous";
+  font-family: 'Josefin Slab', serif;
 
 max-height: calc( 100% - 40px );
 overflow-y: auto;
 }
 #welcome h1{
-  color:black;
+  color:white;
   font-size: 2em;
-  font-weight: normal;
   margin: 0px;
-
+  font-family: 'Josefin Slab', serif;
+  font-weight: bold;
+  letter-spacing: 0.5em;
 }
 #welcome p{
-  font-family: Roboto,sans-serif;
+  font-family: 'Righteous', serif;
   max-width: 500px;
   transform: translate(-50%,0);
     margin-left: 50%;
@@ -66,10 +71,10 @@ overflow-y: auto;
     background: none;
     width:100%;
     box-sizing: border-box;
-    color: black;
+    color: white;
     text-transform: uppercase;
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
 
 }
 #nav-top{
@@ -79,7 +84,7 @@ overflow-y: auto;
     background: none;
     width:100%;
     box-sizing: border-box;
-    color: black;
+    color: white;
     text-transform: uppercase;
     text-align: left;
 
@@ -90,16 +95,17 @@ overflow-y: auto;
     background: none;
     width:100%;
     box-sizing: border-box;
-    color: black;
+    color: white;
     text-transform: uppercase;
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
 
 }
 
 .nav-option{
   padding: 10px;
   font-size: 14px;
+  font-weight: 400;
 }
 #project-grid{
   width: 100%;
@@ -112,6 +118,7 @@ overflow-y: auto;
   overflow: hidden;
   position: relative;
   display: inline-flex;
+  outline:1px solid white;
 }
 .p-image{
   min-height: 25vw;
@@ -120,6 +127,7 @@ overflow-y: auto;
   left:50%;
   top:50%;
   transform: translate(-50%,-50%);
+  filter: sepia(1) hue-rotate(154deg);
 }
 .project h1{
   font-size: 2em;
@@ -285,7 +293,7 @@ height:50vh;
   height: 100%;
   opacity: 0;
   transition: opacity 0.5s;
-  background: rgba(255,255,255,1);
+  background-color: #2cbae7;
 }
 
 .project .project-text{
@@ -293,7 +301,7 @@ height:50vh;
   left:50%;
   top:50%;
   transform: translate(-50%,-50%);
-
+  color:white;
 }
 .project:hover .project-hover{
 
@@ -301,13 +309,9 @@ height:50vh;
   transition: opacity 0.5s;
 }
 .go-button{
-  padding:4px;
-  border-radius: 3px;
-  text-decoration: none;
-  display: block;
-  background: rgb(62, 109, 171);
-  color:white;
+  display: inline-block;
   text-align: center;
+
 }
 .form-contact .mdl-textfield {
     width: 100%;
@@ -316,4 +320,12 @@ height:50vh;
   max-width: 500px;
   margin-left: 50%;
   transform: translate(-50%,0);
+}
+.cole-button{
+  border:1px solid white;
+  background-color: #2cbae7 !important;
+  /*box-shadow: none;*/
+}
+#nav-top span{
+  font-size: 20px;
 }
