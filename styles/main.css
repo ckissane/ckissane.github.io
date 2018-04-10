@@ -118,7 +118,7 @@ overflow-y: auto;
   overflow: hidden;
   position: relative;
   display: inline-flex;
-  outline-color: white;
+  outline:1px solid white;
 }
 .p-image{
   min-height: 25vw;
