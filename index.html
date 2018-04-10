@@ -7,11 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cole Kissane</title>
   <meta name="description" content="Cole Kissane" />
-    <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+    <link href="https://code.getmdl.io/1.3.0/material.indigo-blue.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
 
   <link href="styles/main.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
@@ -20,7 +21,7 @@
 <body>
   <div id="first-section" class="section" page="home">
     <div class="page" page="home">
-      <canvas id="words"></canvas>
+      <!--canvas id="words"></canvas-->
       <div id="nav-top">
         <span class="nav-option">Cole Kissane</span>
       </div>
@@ -67,7 +68,10 @@ I'm a great problem solver and I have good math abilities. I also do graphic des
                   <label class="mdl-textfield__label" for="note">Enter note</label>
               </div>
               <p>
-                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                  <!--button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                      Submit
+                  </button-->
+                  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent cole-button" type="submit">
                       Submit
                   </button>
               </p>
@@ -99,7 +103,9 @@ I'm a great problem solver and I have good math abilities. I also do graphic des
           <p>
             A html5 canvas multiplayer game, in space!
             Using Node JS for the server, and socket IO to connect server and client.
-            <a class="go-button" href="http://phaser.space">View</a>
+            <div class="go-row">
+              <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent cole-button" href="http://phaser.space">View</a>
+</div>
           </p>
         </div>
         </div>
@@ -113,7 +119,9 @@ I'm a great problem solver and I have good math abilities. I also do graphic des
         <p>
           Just a fun little project where dots move randomly semi locked to a grid.
           They bump into each other and you can click to repel or attract them, depending on the setting.
-          <a class="go-button" href="https://cm-tech.github.io/Traffic-Dots/canvas/">View</a>
+            <div class="go-row">
+              <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent cole-button" href="https://cm-tech.github.io/Traffic-Dots/canvas/">View</a>
+</div>
         </p>
       </div>
       </div>
@@ -128,7 +136,9 @@ I'm a great problem solver and I have good math abilities. I also do graphic des
         <p>
 
             This project uses the planck.js physics engine to simulate cars that evolve to drive through a course. Heavily inspired by <a href="http://boxcar2d.com">BoxCar2D</a>.
-<a class="go-button" href="https://cm-tech.github.io/car-evolution/">View</a>
+            <div class="go-row">
+              <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent cole-button" href="https://cm-tech.github.io/car-evolution/">View</a>
+</div>
         </p>
       </div>
       </div>
@@ -141,7 +151,9 @@ I'm a great problem solver and I have good math abilities. I also do graphic des
         <h1>Super Cellular Automata</h1>
         <p>
 This project is one of my explorations in the field of Cellular Automata. Click to draw cells of the selected type (color in top bar). You can select various different rules of the simulation as well.
-<a class="go-button" href="http://coler706.github.io/Super-Cellular-Automata/">View</a>
+<div class="go-row">
+  <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent cole-button" href="http://coler706.github.io/Super-Cellular-Automata/">View</a>
+</div>
         </p>
       </div>
       </div>
@@ -155,7 +167,10 @@ This project is one of my explorations in the field of Cellular Automata. Click 
         <p>
 
             Boids is a term that is used to describe objects which flock like birds. This project simulates boids although shaped like caterpillars instead of birds.
-<a class="go-button" href="https://cm-tech.github.io/boids/">View</a>
+            <br />
+            <div class="go-row">
+              <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent cole-button" href="https://cm-tech.github.io/boids/">View</a>
+            </div>
   </p>
       </div>
       </div>
@@ -169,11 +184,11 @@ This project is one of my explorations in the field of Cellular Automata. Click 
   function setPage(pg){
     document.getElementById("first-section").setAttribute("page",pg);
     document.getElementById("project-section").setAttribute("page",pg);
-    window.setTimeout(reWord,1010);
+    //window.setTimeout(reWord,1010);
   }
   </script>
   <script src="projects.js"></script>
-  <script src="words.js"></script>
+  <!--script src="words.js"></script-->
   <script src="https://code.getmdl.io/1.3.0/material.min.js" defer=""></script>
 </body>
 
