@@ -6,7 +6,8 @@ html,body{
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-    background: #2cbae7;
+    /* background: #2cbae7; */
+    background:linear-gradient(45deg, #2196f3 15%,#3f69b5 85%);/* #2cbae7;*/
 }
 .section{
 width:100%;
@@ -23,7 +24,7 @@ margin:0px;
 }
 #project-section{
 
-  background: #2cbae7;
+  /* background: #2cbae7; */
 }
 
 #particles-js{
@@ -53,10 +54,10 @@ overflow-y: auto;
 }
 #welcome h1{
   color:white;
-  font-size: 2em;
+  font-size: 3em;
   margin: 0px;
   font-family: 'Josefin Slab', serif;
-  font-weight: bold;
+  font-weight: 100;
   letter-spacing: 0.5em;
 }
 #welcome p{
@@ -147,7 +148,7 @@ overflow-y: auto;
   left:50%;
   top:50%;
   transform: translate(-50%,-50%);
-  filter: sepia(1) hue-rotate(154deg);
+  filter: sepia(1)  hue-rotate(173deg);
 }
 .project h1{
   font-size: 2em;
@@ -313,7 +314,9 @@ height:50vh;
   height: 100%;
   opacity: 0;
   transition: opacity 0.5s;
-  background-color: #2cbae7;
+  
+  /*background:linear-gradient(45deg, #2196f3 15%,#3f69b5 85%);*?
+  /* #2cbae7;*/
 }
 
 .project .project-text{
@@ -326,6 +329,11 @@ height:50vh;
 .project:hover .project-hover{
 
   opacity: 1;
+  transition: opacity 0.5s;
+}
+.project:hover .p-image{
+
+  opacity: 0;
   transition: opacity 0.5s;
 }
 .go-button{
@@ -360,9 +368,12 @@ height:50vh;
 }
 .cole-button{
   border:1px solid rgba(255, 255, 255, .5);
-  background-color: #2cbae7 !important;
+  background:none !important;/*linear-gradient(45deg, #2196f3 15%,#3f69b5 85%) !important;*/ /*#2cbae7 !important;*/
   box-shadow: none !important;
 }
 #nav-top span{
   font-size: 20px;
+}
+a{
+  color:white;
 }
